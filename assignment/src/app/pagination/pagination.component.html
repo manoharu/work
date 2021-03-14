@@ -1,0 +1,27 @@
+<ul class="pagination" *ngIf="data.length > 0 && config.itemsPerPage < data.length">
+    <li (click)="previous(true)" class="first-page" [ngClass]="{'disabled':currentIndex == 0}"
+        *ngIf="config.directionalLinks">
+        First
+    </li>
+    <li (click)="previous()" class="previous-page" [ngClass]="{'disabled':currentIndex == 0}"
+        *ngIf="config.directionalLinks">
+        < Previous </li>
+    <li class="page-shift-left" (click)="shiftLeft()" *ngIf="hasLeftShift()">
+        ...
+    </li>
+    <li class="page-item" [ngClass]="{'active': page == currentPage }" *ngFor="let page of pages; let i = index;"
+        [class.hidden]="hideButton(i)" (click)="pageSelect(page, i)">
+        {{page}}
+    </li>
+    <li class="page-shift-right" (click)="shiftRight()" *ngIf="hasRightShift()">
+        ...
+    </li>
+    <li (click)="next()" class="next-page" [ngClass]="{'disabled':currentIndex == (pages.length - 1) }"
+        *ngIf="config.directionalLinks">
+        Next >
+    </li>
+    <li (click)="next(true)" class="last-page" [ngClass]="{'disabled':currentIndex == (pages.length - 1) }"
+        *ngIf="config.directionalLinks">
+        Last
+    </li>
+</ul>

@@ -1,0 +1,32 @@
+.pagination {
+    height: 40px;
+  }
+  .pagination > li {
+    display:inline;
+    position: relative;
+    float: left;
+    padding: 6px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .pagination > li:hover {
+    z-index: 2;
+    color: #007bff;
+  }
+  .pagination > li.disabled{
+    cursor: inherit;
+    opacity: 0.5;
+  }
+  .pagination > li.disabled:hover {
+    z-index: 0;
+    color: #007bff;
+  }
+  .pagination > li.active {
+    z-index: 3;
+    color: rgb(14, 15, 15);
+    cursor: default;
+  }
+  
